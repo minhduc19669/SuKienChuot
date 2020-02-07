@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <img id="myImage" src="https://seatacblog.com/wp-content/uploads/2019/08/soccer-ball.jpg" style="width: 200px"/>
+    <p>Click button below to move the image to right</p>
+    <input type="button" value="Click Me" onclick="moveright()"/>
+</form>
+<script>
+    let m = null;
+    m = document.getElementById('myImage');
+    function init() {
+        m = document.getElementById('myImage');
+        m.style.position = 'relative';
+        m.style.left = '0px';
+    }
+    function moveright() {
+        m.style.left = parseInt(m.style.left) + 10 + 'px';
+    }
+    window.onload = init();
+</script>
+</body>
+</html>
