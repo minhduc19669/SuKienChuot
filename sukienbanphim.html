@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="docReady()">
+<img id="love" src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.0-9/p960x960/69512623_170601000748220_130796296922464256_o.jpg?_nc_cat=105&_nc_ohc=bwWK5vnBAmEAQmn21FDHCTHS6OciGP9amCyAvgDh3he6opM0CrRqbfuvw&_nc_ht=scontent.fhan2-4.fna&oh=ee89330c1ffe7f930b4dc9d30a898997&oe=5E71B484" style="position: absolute;left: 0; top: 0; height: 300px; width: 300px"/>
+<script>
+    function up() {
+        let element = document.getElementById("love");
+        element.style.top = parseInt(element.style.top) -5 + 'px';
+    }
+    function down() {
+        let element = document.getElementById("love");
+        element.style.top = parseInt(element.style.top) + 5 + 'px';
+    }
+    function left() {
+        let element = document.getElementById("love");
+        element.style.left = parseInt(element.style.left) - 5 + 'px';
+    }
+    function right() {
+        let element = document.getElementById("love");
+        element.style.left = parseInt(element.style.left) + 5 + 'px';
+    }
+    function moveSelection(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                left();
+                break;
+            case 39:
+                right();
+                break;
+            case 38:
+                up();
+                break;
+            case 40:
+                down();
+                break;
+        }
+    }
+    function docReady() {
+        window.addEventListener('keydown', moveSelection);
+    }
+</script>
+</body>
+</html>
